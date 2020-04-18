@@ -1,0 +1,40 @@
+public class ReplaceBlank {
+    public static void main(String[] args) {
+        //test
+        StringBuffer s = new StringBuffer();
+        s.append("Hello World !");
+        System.out.println(s.toString());
+        replaceSpace(s);
+        System.out.println(s.toString());
+    }
+        //method
+        private static String replaceSpace(StringBuffer str) {
+            //原数组的长度
+            int oldLen = str.length();
+            //每出现一个空格，在结尾添加两个任意字符，扩充字符串长度
+            for(int i = 0; i < oldLen; i ++) {
+                if(str.charAt(i) == ' ') {
+                    str.append("12");
+                }
+            }
+            int i = oldLen - 1;      //原长度
+            int j = str.length() - 1;//新长度
+            //从后往前循环
+            while(i >= 0 && j > i) {
+                char c = str.charAt(i);
+                i --;
+                if(c == ' ') {//每出现一个空格，替换为%20
+                    str.setCharAt(j, '0');
+                    j --;
+                    str.setCharAt(j, '2');
+                    j --;
+                    str.setCharAt(j, '%');
+                    j --;
+                } else {//否则照旧
+                    str.setCharAt(j, c);
+                    j --;
+                }
+            }
+            return str.toString();
+        }
+}
