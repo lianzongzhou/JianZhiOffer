@@ -31,9 +31,9 @@ StringBuffer str = new StringBuffer() //new对象,初始为空
 
 ### 方法1：使用栈
 先进后出，将链表内容依次全部进栈，再全部出栈  
-stack.push() 进栈
-stack.pop()  出栈
-arraylist.add(val)
+stack.push() 进栈  
+stack.pop()  出栈  
+arraylist.add(val)  
 ### 方法2：使用递归
-先加入链表最后面的节点，递归加入每个前节点
+先加入链表最后面的节点，递归加入每个前节点  
 arraylist.addAll() 添加所有元素到列表
